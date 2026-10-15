@@ -23,10 +23,11 @@ async def login(token: str, response: Response):
     try:
         decoded = firebase_auth.verify_id_token(token)
     except (FirebaseError, ValueError) as error:
+        print(f"Firebase verification failed: {type(error).__name__}: {error}")
         raise HTTPException(
             status_code=401,
             detail="Google sign-in could not be verified.",
-        ) from error
+    ) from error
 
     firebase_uid = decoded["uid"]
     now = datetime.now(timezone.utc)
