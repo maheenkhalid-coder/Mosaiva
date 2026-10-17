@@ -5,3 +5,11 @@ pymongo
 httpx
 firebase_admin
 redis
+langgraph
+langchain
+langchain-openai
+langchain-tavily
+langchain-text-splitters
+pypdf
+python-pptx
+Pillow
